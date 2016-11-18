@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file orginal="global" source-language="en" datatype="plaintext">
+		<body>			
+			<trans-unit id="4">
+				<source>Promote to reviewer</source>
+				<target>Сделать рецензентом</target></trans-unit>			
+			<trans-unit id="8">
+				<source>Demote from reviewer</source>
+				<target>Удалить из рецензентов</target></trans-unit>
+			<trans-unit id="9">
+				<source>Manuscripts list</source>
+				<target>Список статей</target></trans-unit>
+			<trans-unit id="10">
+                <source>Change user data</source>
+                <target>Изменить учётную запись</target>
+            </trans-unit>   
+		</body>
+	</file>
+</xliff>
+

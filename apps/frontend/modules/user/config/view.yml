@@ -1,0 +1,7 @@
+registerSuccess:
+  javascripts: [jquery/jquery.bgiframe.min.js: { condition: IE }, jquery/excanvas-compressed.js: { condition: IE }, jquery/jquery.bt.min.js, register.js]
+  stylesheets: [jquery.bt.css]
+editSuccess:
+  javascripts: [jquery/jquery.bgiframe.min.js: { condition: IE }, jquery/excanvas-compressed.js: { condition: IE }, jquery/jquery.bt.min.js, register.js]
+  stylesheets: [jquery.bt.css]
+  

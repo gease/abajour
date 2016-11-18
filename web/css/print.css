@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+#sf_admin_bar
+{
+  display: none;
+}
+
+#sf_admin_container td, th {
+border-color:#000;
+border-style:solid;
+border-width:1px;
+text-align:left;
+vertical-align:top;
+}
+
+#sf_admin_list_th_actions, .sf_admin_list_th_actions, .sf_admin_list tfoot {
+display: none;
+}
+
+#main_menu, #lang_bar
+{
+display: none;
+}
+
+.sf_admin_actions
+{
+display: none;
+}
+
+html
+{
+	background-color: #FFF;	
+	font-size: 14px;
+}
+
+#sf_admin_container th {
+background-color:#FFF;
+}

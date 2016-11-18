@@ -1,0 +1,13 @@
+submitSuccess:  
+  javascripts:
+    - jquery/jquery-ui-1.7.1.custom.min.js 
+    - jquery/plugins/jquery.autocomplete.js 
+    - jquery/plugins/jquery.hoverIntent.minified.js 
+    - jquery/jquery.bgiframe.min.js: { condition: IE } 
+    - jquery/excanvas-compressed.js: { condition: IE } 
+    - jquery/jquery.bt.min.js 
+    - register.js
+    - tiny_mce/tiny_mce.js
+  stylesheets:    [jquery.autocomplete.css, jquery.bt.css]
+
+  

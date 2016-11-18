@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext" date="2009-02-19T15:18:07Z">
+    <body>
+      <trans-unit id="1">
+        <source>Sign out</source>
+        <target>Выйти</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Password</source>
+        <target>Пароль</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Username</source>
+        <target>Имя пользователя</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>First name</source>
+        <target>Имя</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Last name</source>
+        <target>Фамилия</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Middle name</source>
+        <target>Отчество</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>City</source>
+        <target>Город</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Country</source>
+        <target>Страна</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Address</source>
+        <target>Адрес</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Gender</source>
+        <target>Пол</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Qualification</source>
+        <target>Учёная степень</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Institution</source>
+        <target>Организация</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Email</source>
+        <target>Эл. почта</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Is address private</source>
+        <target>Указан домашний адрес?</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Retype password</source>
+        <target>Пароль повторно</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Date of birth</source>
+        <target>Дата рождения</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>male</source>
+        <target>мужской</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>female</source>
+        <target>женский</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Is reviewer</source>
+        <target>Рецензент</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Is active</source>
+        <target>Не заблокирован</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>yes or no</source>
+        <target>не важно</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>yes</source>
+        <target>да</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>no</source>
+        <target>нет</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Manuscripts</source>
+        <target>Рукописи</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Reviews</source>
+        <target>Рецензии</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Reviewed authors</source>
+        <target>Рецензированные авторы</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>New status</source>
+        <target>Новое состояние</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Title</source>
+        <target>Название</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Corresponding author</source>
+        <target>Автор для переписки</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Change status</source>
+        <target>Изменить статус</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Info</source>
+        <target>Подробно</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Submitted</source>
+        <target>Подана</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Accepted for review</source>
+        <target>Принята на рецензию</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Accepted for publication</source>
+        <target>Принята к публикации</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Pending</source>
+        <target>Ждёт решения редколлегии</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Published</source>
+        <target>Опубликована</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Rejected</source>
+        <target>Отклонена</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Under revision by authors</source>
+        <target>На переработке</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Under review</source>
+        <target>На рецензии</target>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Reviewed</source>
+        <target>Отрецензирована</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Date submitted</source>
+        <target>Дата подачи</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Status</source>
+        <target>Состояние</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Authors</source>
+        <target>Авторы</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>from</source>
+        <target>c</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>to</source>
+        <target>до</target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Reviewers</source>
+        <target>Рецензенты</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Submitted on</source>
+        <target>Подана</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Accepted for review on</source>
+        <target>Принята для рецензирования</target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Reviewer rejected by authors</source>
+        <target>Рецензент отвергнут авторами</target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Manuscript List</source>
+        <target>Список статей</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>Guard user List</source>
+        <target>Список пользователей</target>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>Status string</source>
+        <target>Состояние</target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>City</source>
+        <target>Город</target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Reject reviewing</source>
+        <target>Отказаться от рецензирования</target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>Reviewer refused to review the manuscript</source>
+        <target>Рецензент отказался от рецензирования</target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Accept as is</source>
+        <target>Публиковать без изменений</target>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Accept after minor improvements</source>
+        <target>Публиковать с минимальными изменениями</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Accept after major rewrite according to reviewer's comments</source>
+        <target>Публиковать после изменений, сделанных с учетом прилагаемых комментариев рецензента </target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Rewrite and submit as brief communication</source>
+        <target>Переработать и представить в качестве короткого сообщения </target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>Reject</source>
+        <target>Отклонить</target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Under review after revision</source>
+        <target>У рецензента после переработки</target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>[0]Dear|[1]Dear</source>
+        <target>[0]Уважаемый|[1]Уважаемая</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>We have received your manuscript entitled "%1" and will forward it to reviewer soon.</source>
+        <target>Ваша статья "%1" получена редакцией и в ближайшее время будет направлена рецензенту.</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Managing editor of JSC</source>
+        <target>Зав. редакцией ЖСХ</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Elena L. Taskaeva</source>
+        <target>Таскаева Елена Львовна</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Your manuscript</source>
+        <target>Ваша статья</target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>I have to inform you that your manuscript entitled "%1" is rejected by editorial board of Journal of Structural Chemistry.</source>
+        <target>Сообщаю Вам, что Ваша статья "%1" редколлегией Журнала структурной химии отклонена.</target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>Please find the copy of reviewer's remarks below</source>
+        <target>Копию рецензии прилагаю</target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>I am pleased to inform you that your manuscript entitled "%1" is accepted for publication in Journal of Structural Chemistry and will appear in due course.</source>
+        <target>Сообщаю Вам, что Ваша статья "%1" принята к публикации и будет напечатана в Журнале структурной химии в порядке очереди.</target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>Editorial board of Journal of Structural Chemistry would like to ask you to write a review on manuscript entitled "%1" by %2.</source>
+        <target>Редколлегия Журнала структурной химии обращается к Вам с просьбой написать рецензию на статью "%1" авторов %2.</target>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>We would appreciate if you could provide your review within 2 weeks. Thank you in advance for your assistance.</source>
+        <target>По возможности просим прислать рецензию в течение 2х недель. Заранее благодарим за помощь в подготовке журнала.</target>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>Decline</source>
+        <target>Отклонить</target>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>Accept</source>
+        <target>Принять</target>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>Users management</source>
+        <target>Управление пользователями</target>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>Manuscripts management</source>
+        <target>Управление статьями</target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Submit review</source>
+        <target>Отослать рецензию</target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>Submit reply</source>
+        <target>Отправить ответ</target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>Manuscript</source>
+        <target>Рукопись</target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>Reviewer</source>
+        <target>Рецензент</target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Review</source>
+        <target>Рецензия</target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>Final decision</source>
+        <target>Окончательное решение</target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Accepted</source>
+        <target>Принята</target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Declined</source>
+        <target>Отклонена</target>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>Volume</source>
+        <target>Том</target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>Issue</source>
+        <target>Выпуск</target>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>Pages</source>
+        <target>Страницы</target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>size</source>
+        <target>размер</target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>Kb</source>
+        <target>Кб</target>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>created</source>
+        <target>создан</target>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>Please check the corrections made by authors of %1 %2 according to your remarks.</source>
+        <target>Пожалуйста, ознакомьтесь с исправлениями, сделанными авторами (%1) статьи "%2" на основании Ваших замечаний.</target>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>Please reply with your final decision within two weeks if possible.</source>
+        <target>По возможности сообщите своё окончательное решение в течение двух недель.</target>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Edit Guard user</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>Sent for review on</source>
+        <target>Отправлена на рецензию</target>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>#</source>
+        <target>№</target>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Last action</source>
+        <target>Последнее изменение</target>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>No result</source>
+        <target>Нет результатов</target>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>Actions</source>
+        <target>Действия</target>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>[0] no result|{n: n % 10 > 4} %1% results|{n: n % 10 > 1} %1% results|{n: n % 10 > 0} %1% results|{n: n % 10 > -1} %1% results</source>
+        <target>[0] нет результатов|{n: n % 10 > 4} %1% результатов|{n: n % 10 > 1} %1% результата|{n: n % 10 > 0} %1% результат|{n: n % 10 > -1} %1% результатов</target>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>I'm forwarding you reviewer's comments on your manuscript entitled "%1".</source>
+        <target>Высылаю Вам замечания рецензента на Вашу статью "%1".</target>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>Your paper may be accepted for publication in the Journal of Structural Chemistry upon receipt of the final version. The decision will be taken by the Editors after a consultation with the reviewer.</source>
+        <target>Вопрос об опубликовании статьи в Журнале структурной химии будет решаться после вторичного рассмотрения в редколлегии переработанной рукописи.</target>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>File</source>
+        <target>Файл</target>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>General statistics</source>
+        <target>Общая статистика</target>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>Region</source>
+        <target>Регион</target>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Published or accepted</source>
+        <target>Опубликована или принята к публикации</target>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Under consideration</source>
+        <target>На рассмотрении</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Age distribution</source>
+        <target>Возрастное распределение</target>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>Previously submitted manuscripts</source>
+        <target>Ранее подавали рукописи</target>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Change reviewer</source>
+        <target>Заменить рецензента</target>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Decision</source>
+        <target>Решение</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>Required.</source>
+        <target>Необходимое</target>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>The username and/or password is invalid.</source>
+        <target>Неверное имя пользователя и/или пароль.</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Journal of Computational Technologies</source>
+        <target>Журнал "Вычислительные Технологии"</target>
+      </trans-unit>
+       <trans-unit id="115">
+        <source>is empty</source>
+        <target>пустое</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Page you requested is not found on the server.</source>
+        <target>Запрашиваемая Вами страница отсутствует на сервере.</target>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>This module is disabled.</source>
+        <target>Этот модуль выключен.</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>The begin date must be before the end date.</source>
+        <target>Начальная дата должна быть раньше конечной.</target>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>Date range</source>
+        <target>Диапазон дат</target>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>of them</source>
+        <target>из них</target>
+      </trans-unit>
+       <trans-unit id="121">
+        <source>Number of authors falling into coresponding age span.</source>
+        <target>Количество авторов, чей возраст попадает в соответствующий промежуток.</target>
+      </trans-unit>
+      <trans-unit id="122">
+        <source>Manuscripts per author</source>
+        <target>Количество статей на одного автора</target>
+      </trans-unit>
+      <trans-unit id="123">
+        <source>Sumbitted single manuscript</source>
+        <target>Авторы одной рукописи</target>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Sumbitted two manuscripts</source>
+        <target>Авторы 2х рукописей</target>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Sumbitted 3 or more</source>
+        <target>Авторы 3х и более рукописей</target>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>Returning authors</source>
+        <target>Постоянные авторы</target>
+      </trans-unit>
+       <trans-unit id="127">
+        <source>Already published in JCT</source>
+        <target>Ранее публиковались в ЖВТ</target>
+      </trans-unit>
+       <trans-unit id="128">
+        <source>Wrong reviewer/manuscript combination</source>
+        <target>Неверное сочетание рецензент/рукопись</target>
+      </trans-unit>
+       <trans-unit id="129">
+        <source>Overlaps with another publication</source>
+        <target>Перекрывается с существующей публикацией</target>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>First page</source>
+        <target>Первая страница</target>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>Last page</source>
+        <target>Последняя страница</target>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Invalid mime type (%mime_type%).</source>
+        <target>Недопустимый mime тип файла (%mime_type%).</target>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>File is too large (maximum is %max_size% bytes).</source>
+        <target>Слишком большой файл (максимум - %max_size% байт).</target>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>Proceed to review form</source>
+        <target>Перейти к форме рецензии</target>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>Unreviewed</source>
+        <target>Нет рецензии</target>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Total</source>
+        <target>Всего</target>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Register</source>
+        <target>Зарегистрироваться</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Log in</source>
+        <target>Войти</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>sign in</source>
+        <target>Войти</target>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>View review</source>
+        <target>Просмотреть отзыв</target>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Take final decision</source>
+        <target>Принять окончательное решение</target>
+      </trans-unit>
+       <trans-unit id="142">
+        <source>Sending mail failed</source>
+        <target>Не удалось отправить почту</target>
+      </trans-unit>
+       <trans-unit id="143">
+        <source>Are you sure?</source>
+        <target>Вы уверены?</target>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>You don't have the required permission to access this page.</source>
+        <target>У Вас нет прав для просмотра этой страницы.</target>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>confirm=Are you sure?</source>
+        <target>confirm=Вы уверены?</target>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>Journal of Structural Chemistry</source>
+        <target>Журнал структурной химии</target>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>Passwords do not match</source>
+        <target>Пароли не совпадают</target>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>Name used to log in to the system</source>
+        <target>Имя, под которым Вы будете входить в систему</target>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>Retype password to make sure you made no mistake</source>
+        <target>Наберите пароль ещё раз, чтобы исключить ошибку</target>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>User registration</source>
+        <target>Регистрация пользователя</target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Login info</source>
+        <target>Логин</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Personal info</source>
+        <target>Сведения о пользователе</target>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>Phone work</source>
+        <target>Рабочий телефон</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Phone home</source>
+        <target>Домашний телефон</target>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Country you are working in</source>
+        <target>Страна, в которой Вы работаете</target>
+      </trans-unit>
+      <trans-unit id="156">
+        <source>If your city is not listed, leave the field blank and indicate your city in "address" field</source>
+        <target>Если Вашего города нет в списке, оставьте поле пустым и укажите город в поле "адрес"</target>
+      </trans-unit>
+      <trans-unit id="157">
+        <source>Commonly accepted name of your institution</source>
+        <target>Общепринятое название Вашего учреждения</target>
+      </trans-unit>
+      <trans-unit id="158">
+        <source>Full postal address for paper correspondence</source>
+        <target>Полный почтовый адрес для бумажной корреспонденции</target>
+      </trans-unit>
+      <trans-unit id="159">
+        <source>Check this box if the address above is your private address</source>
+        <target>Отметьте здесь, если адрес выше является Вашим домашним адресом</target>
+      </trans-unit>
+      <trans-unit id="160">
+        <source>Valid e-mail for further notifications and correspondence</source>
+        <target>Действительный адрес электронной почты для дальнейшей переписки</target>
+      </trans-unit>
+       <trans-unit id="161">
+        <source>Your titles and qualifications</source>
+        <target>Ваши научные степень и звание </target>
+      </trans-unit>
+      <trans-unit id="162">
+        <source>Such username already exists</source>
+        <target>Это имя уже существует</target>
+      </trans-unit>
+      <trans-unit id="163">
+        <source>You logged in as</source>
+        <target>Вы вошли как</target>
+      </trans-unit>
+      <trans-unit id="165">
+        <source>Edit personal data</source>
+        <target>Личные данные</target>
+      </trans-unit>
+      <trans-unit id="166">
+        <source>Submit manuscript</source>
+        <target>Подать статью</target>
+      </trans-unit>
+      <trans-unit id="167">
+        <source>List manuscripts</source>
+        <target>Список статей</target>
+      </trans-unit>
+      <trans-unit id="168">
+        <source>List reviews</source>
+        <target>Список рецензий</target>
+      </trans-unit>
+      <trans-unit id="169">
+        <source>Welcome, </source>
+        <target>Здравствуйте, </target>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>Invalid.</source>
+        <target>Неправильно</target>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>Suggested reviewers</source>
+        <target>Предлагаемые рецензенты</target>
+      </trans-unit>
+       <trans-unit id="172">
+        <source>Fields cannot be empty</source>
+        <target>Заполните все поля</target>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>Favorite reviewers</source>
+        <target>Желательные рецензенты</target>
+      </trans-unit>
+      <trans-unit id="174">
+        <source>Rejected reviewers</source>
+        <target>Нежелательные рецензенты</target>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>add to favorites</source>
+        <target>добавить в желательные</target>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>add to rejected</source>
+        <target>добавить в нежелательные</target>
+      </trans-unit>
+      <trans-unit id="176">
+        <source>Name</source>
+        <target>ФИО</target>
+      </trans-unit>
+      <trans-unit id="177">
+        <source>Annotation</source>
+        <target>Аннотация</target>
+      </trans-unit>
+       <trans-unit id="178">
+        <source>You need to indicate corresponding author</source>
+        <target>Необходимо указать автора для переписки</target>
+      </trans-unit>
+       <trans-unit id="179">
+        <source>Invalid corresponding author</source>
+        <target>Неверный автор для переписки</target>
+      </trans-unit>
+      <trans-unit id="180">
+        <source>Keywords freetext</source>
+        <target>Произвольные ключевые слова</target>
+      </trans-unit>
+      <trans-unit id="181">
+        <source>Keywords from list</source>
+        <target>Ключевые слова из списка</target>
+      </trans-unit>
+      <trans-unit id="182">
+        <source>Manuscripts list</source>
+        <target>Список рукописей</target>
+      </trans-unit>
+      <trans-unit id="183">
+        <source>Accompanying letter</source>
+        <target>Сопроводительное письмо</target>
+      </trans-unit>
+      <trans-unit id="184">
+        <source>File in %1 format, maximal size %2 Mb</source>
+        <target>Файл в формате %1 максимальным размером %2 Мб</target>
+      </trans-unit>
+      <trans-unit id="185">
+        <source>Choose from appearing pop-up. Move with the mouse to set the order. Check corresponding author with radiobutton.</source>
+        <target>Выбирайте из всплывающей подсказки. Перетаскивайте мышкой для установления правильного порядка. Отметьте автора для переписки переключателем.</target>
+      </trans-unit>
+      <trans-unit id="186">
+        <source>Editorial office</source>
+        <target>Редакция</target>
+      </trans-unit>
+      <trans-unit id="187">
+        <source>Technical support</source>
+        <target>Техническая поддержка</target>
+      </trans-unit>
+      <trans-unit id="188">
+        <source>Keywords</source>
+        <target>Ключевые слова</target>
+      </trans-unit>
+      <trans-unit id="189">
+        <source>Attention!</source>
+        <target>Внимание!</target>
+      </trans-unit>
+      <trans-unit id="190">
+        <source>Following users already exist. Make sure you are not one of them.</source>
+        <target>Следующие пользователи уже зарегистрированы. Убедитесь, что Вы - не один из них.</target>
+      </trans-unit>
+      <trans-unit id="191">
+        <source>Zipped extra files</source>
+        <target>Заархивированные дополнительные файлы</target>
+      </trans-unit>
+      <trans-unit id="192">
+        <source>Submit article</source>
+        <target>Отправить статью</target>
+      </trans-unit>
+      <trans-unit id="193">
+        <source>Manuscript submitted successfully.</source>
+        <target>Рукопись успешно отправлена.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

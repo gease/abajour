@@ -1,0 +1,240 @@
+issue:
+  class: sfPropelRouteCollection
+  options:
+    model:                Issue
+    module:               issue
+    prefix_path:          issue
+    column:               volume
+    with_wildcard_routes: true
+
+manuscript:
+  class: sfPropelRouteCollection
+  options:
+    model:               manuscript
+    module:              manuscript
+    prefix_path:         manuscript
+    with_wildcard_routes: true
+
+guard_user:
+  class: sfPropelRouteCollection
+  options:
+    model:               GuardUser
+    module:              guard_user
+    prefix_path:         guard_user   
+    with_wildcard_routes: true    
+
+# default rules
+homepage:
+  url:   /
+  param: { module: main, action: index }
+
+#default_symfony:
+#  url:   /symfony/:action/*
+#  param: { module: default }
+
+secure:
+  url:   /sfGuardAuth/secure
+
+#user module rules  
+user:
+  url:  /user/:user_id
+  param: { module: user, action: index }
+  class: sfPropelRoute
+  options: { model: sfGuardUserProfile, type: object }
+  requirements:
+    user_id: \d+
+    sf_method: [GET]
+    
+edit_user:
+  url: /user/edit/:user_id
+  param: { module: user, action: edit }
+  class: sfRequestRoute  
+  requirements:
+    user_id: \d+ 
+    
+user_papers:
+  url:  /list_papers/:user_id
+  param: { module: user, action: listManuscripts }
+  class: sfPropelRoute
+  options: { model: sfGuardUserProfile, type: object }
+  requirements:
+    user_id: \d+
+    sf_method: [GET]
+    
+list_reviews:
+  url: /list_reviews/:user_id
+  param: { module: user, action: listReviews }
+  class: sfPropelRoute
+  options: 
+    model: sfGuardUserProfile
+    type: object
+    method_for_criteria: doSelectReviewer
+  requirements:
+    sf_method: [GET]
+    user_id: \d+    
+    
+#paper module rules    
+create_manuscript:
+  url: /submit/*
+  param: { module: paper, action: create }
+  class: sfRequestRoute
+  requirements:    
+    sf_method: [GET]
+    
+submit_manuscript:
+  url: /paper/submit/*
+  param: { module: paper, action: submit }
+  class: sfRequestRoute
+  requirements: 
+    sf_method: [PUT]   
+
+create_reply:
+  url: /paper/create_reply/:id
+  param: { module: paper, action: createReply }
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements: 
+    sf_method: [GET]
+    id: \d+
+    
+submit_reply:
+  url: /paper/submit_reply/:id
+  param: { module: paper, action: submitReply }
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements:
+    sf_method: [PUT]
+    id: \d+
+    
+manuscript_info:
+  url: /paper/:id
+  param: { module: paper, action: info }
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements:
+    sf_method: [GET]
+
+show_file:
+  url: /file/:id/:action_id
+  param: { module: paper, action: linkFile }
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements:
+    sf_method: [GET]
+    id: \d+
+    action_id:  \d+
+  
+show_extra_file:
+  url: /extra_file/:id/:action_id
+  param: { module: paper, action: linkExtraFile } 
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements:
+    sf_method: [GET]
+    id: \d+
+    action_id:  \d+
+          
+#reviewer module rules        
+edit_review:
+  url: /review_edit/:manuscript_id/:user_id
+  param: { module: reviewer, action: edit }
+  class: sfPropelRoute
+  options: { model: review, type: object }
+  requirements:
+    sf_method: [GET]
+    manuscript_id: \d+    
+    user_id: \d+
+    
+edit_review_final:
+  url: /review_edit_final/:manuscript_id/:user_id
+  param: { module: reviewer, action: editFinal }
+  class: sfPropelRoute
+  options: { model: review, type: object }
+  requirements:
+    sf_method: [GET]
+    manuscript_id: \d+    
+    user_id: \d+    
+
+submit_review_final:
+  url: /review_submit_final/:manuscript_id/:user_id
+  param: { module: reviewer, action: submitFinal }
+  class: sfPropelRoute
+  options: { model: review, type: object }
+  requirements:
+    sf_method: [PUT]
+    manuscript_id: \d+    
+    user_id: \d+    
+
+submit_review:
+  url: /review_submit/:manuscript_id/:user_id
+  param: { module: reviewer, action: submit }
+  class: sfPropelRoute
+  options: { model: review, type: object }
+  requirements:
+    sf_method: [PUT]
+    manuscript_id: \d+
+    user_id: \d+
+    
+reject_review:
+  url: /review_reject/:manuscript_id/:user_id
+  param: { module: reviewer, action: reject }
+  class: sfPropelRoute
+  options: { model: review, type: object }
+  requirements:
+    sf_method: [GET]
+    manuscript_id: \d+
+    user_id: \d+   
+    
+view_review:
+  url: /review_view/:manuscript_id/:user_id
+  param: { module: reviewer, action: view }
+  class: sfPropelRoute
+  options: { model: review, type: object }
+  requirements:
+    sf_method: [GET]
+    manuscript_id: \d+
+    user_id: \d+    
+    
+review_file:
+    url: /review_file/:manuscript_id/:user_id
+    param: { module: reviewer, action: linkFile }
+    class: sfPropelRoute
+    options: { model: review, type: object }
+    requirements:
+      sf_method: [GET]
+      manuscript_id: \d+
+      user_id: \d+   
+
+#manuscript module additional routes    
+change_status:
+  url: /change_status/:id
+  param: { module: manuscript, action: changeStatus }
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements:
+    sf_method: [GET]
+    id: \d+
+    
+changed_status:
+  url: /changed_status/:id
+  param: { module: manuscript, action: changedStatus }
+  class: sfPropelRoute
+  options: { model: manuscript, type: object }
+  requirements:
+    sf_method: [PUT]
+    id: \d+
+
+change_language:
+  url:  /main/changeLanguage  
+  param: { module: main, action: changeLanguage }
+  
+login:
+  url:  /signin  
+  param: { module: sfGuardAuth, action: signin }
+  
+default_index:
+  url:   /:module
+  param: { action: index }
+  
+default:
+  url:   /:module/:action/*

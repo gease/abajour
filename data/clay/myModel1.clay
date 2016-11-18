@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clay-model clay-version="1.4.2">
+<database-model alias="" author="" begin-script="" end-script="" name="myModel1" remarks="" sql-dialect-id="jp.azzurri.clay.dialect.MySQL_5_0_Dialect" uid="1d51756:12296f40304:-8000" version="1.0">
+<database-model-description></database-model-description>
+<schema-list/>
+</database-model>
+</clay-model>

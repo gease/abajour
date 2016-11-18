@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file orginal="global" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="1">
+                <source>theoretical</source>
+                <target>теоретический</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>experimental</source>
+                <target>экспериментальный</target></trans-unit>
+            <trans-unit id="3">
+                <source>review</source>
+                <target>обзорный</target></trans-unit>
+            <trans-unit id="4">
+                <source>communication</source>
+                <target>краткое сообщение</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>new method</source>
+                <target>описание новой методики</target></trans-unit>
+            <trans-unit id="6">
+                <source>excellent</source>
+                <target>превосходно</target></trans-unit>
+            <trans-unit id="7">
+                <source>good</source>
+                <target>хорошо</target></trans-unit>
+            <trans-unit id="8">
+                <source>satisfactory</source>
+                <target>удовлетворительно</target></trans-unit>
+            <trans-unit id="9">
+                <source>bad</source>
+                <target>плохо</target></trans-unit>
+            <trans-unit id="10">
+                <source>Accept as is</source>
+                <target>Публиковать без изменений</target></trans-unit>
+            <trans-unit id="11">
+                <source>Accept after minor improvements</source>
+                <target>Публиковать с минимальными изменениями</target></trans-unit>
+            <trans-unit id="12">
+                <source>Accept after major rewrite according to reviewer's comments</source>
+                <target>Публиковать после изменений, сделанных с учетом прилагаемых комментариев рецензента </target></trans-unit>
+            <trans-unit id="13">
+                <source>Rewrite and submit as brief communication</source>
+                <target>Переработать и представить в качестве короткого сообщения </target></trans-unit>
+            <trans-unit id="14">
+                <source>Reject</source>
+                <target>Отклонить</target></trans-unit>
+            <trans-unit id="15">
+                <source>Poor style</source>
+                <target>Неудовлетворительный стиль изложения</target></trans-unit>
+            <trans-unit id="16">
+                <source>Poor text quality (numerous misprints)</source>
+                <target>Неудовлетворительное техническое качество текста (множество опечаток)</target></trans-unit>
+            <trans-unit id="17">
+                <source>Technically poor illustrations</source>
+                <target>Неудовлетворительное техническое качество иллюстраций </target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Poor bibliography</source>
+                <target>Неудовлетворительный библиографический обзор</target></trans-unit>
+            <trans-unit id="19">
+                <source>Too many formulae</source>
+                <target>Слишком много формул</target></trans-unit>
+            <trans-unit id="20">
+                <source>Too many figures</source>
+                <target>Слишком много иллюстраций</target></trans-unit>
+            <trans-unit id="21">
+                <source>Too many tables</source>
+                <target>Слишком много таблиц</target></trans-unit>
+            <trans-unit id="22">
+                <source>General character</source>
+                <target>Общий характер материала</target></trans-unit>
+            <trans-unit id="23">
+                <source>Matches scope of journal</source>
+                <target>Содержание статьи соответствует ЖВТ</target></trans-unit>
+            <trans-unit id="24">
+                <source>Suggested submitting to</source>
+                <target>Статью целесообразно направить в</target></trans-unit>
+            <trans-unit id="25">
+                <source>Material is original</source>
+                <target>Материал оригинален</target></trans-unit>
+            <trans-unit id="26">
+                <source>Material was fully published before</source>
+                <target>Материал ранее опубликован полностью</target></trans-unit>
+            <trans-unit id="27">
+                <source>Material was partly published before</source>
+                <target>Материал ранее опубликован частично</target></trans-unit>
+            <trans-unit id="28">
+                <source>Material contains new theoretical data</source>
+                <target>Материал содержит новые теоретические результаты</target></trans-unit>
+            <trans-unit id="29">
+                <source>Material contains new experimental data</source>
+                <target>Материал содержит новые расчетные (экспериментальные) данные</target></trans-unit>
+            <trans-unit id="30">
+                <source>Material does not contain considerably new data</source>
+                <target>Материал не содержит существенно новых научных результатов</target></trans-unit>
+            <trans-unit id="31">
+                <source>Material contains a number of erroneous statements and/or experimental data</source>
+                <target>Материал содержит ряд ошибочных утверждений, расчетных (экспериментальных) данных</target></trans-unit>
+            <trans-unit id="32">
+                <source>Originality</source>
+                <target>Оригинальность и новизна</target></trans-unit>
+            <trans-unit id="33">
+                <source>Presentation</source>
+                <target>Качество представления результатов</target></trans-unit>
+            <trans-unit id="34">
+                <source>Total</source>
+                <target>В целом</target></trans-unit>
+            <trans-unit id="35">
+                <source>Reviewer's recommendations</source>
+                <target>Рекомендации рецензента</target></trans-unit>
+            <trans-unit id="36">
+                <source>Additional remarks</source>
+                <target>Дополнительные замечания</target></trans-unit>
+            <trans-unit id="37">
+                <source>Reduce by (in %)</source>
+                <target>Объем статьи следует сократить на (в %)</target></trans-unit>
+            <trans-unit id="38">
+                <source>Reviewer's comments</source>
+                <target>КОММЕНТАРИИ РЕЦЕНЗЕНТА</target></trans-unit>
+            <trans-unit id="39">
+                <source>File</source>
+                <target>Файл</target></trans-unit>
+            <trans-unit id="40">
+                <source>Required.</source>
+                <target>Необходимое</target></trans-unit>
+            <trans-unit id="42">
+            	<source>Comments for editor</source>
+            	<target>Комментарии для редакции</target></trans-unit>
+        </body>
+    </file>
+</xliff>
+

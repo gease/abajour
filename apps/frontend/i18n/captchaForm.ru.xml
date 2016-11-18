@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file orginal="global" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="1">
+                <source>Security code</source>
+                <target>Код для подтверждения безопасности</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>The code you copied is not valid.</source>
+                <target>Вы ввели неверный код.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>You did not copy any code. Please copy the code.</source>
+                <target>Вы не ввели код. Пожалуйста, введите код.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Please type in the security code from the image.If you cannot read the code, reload the image with the help of adjacent button.</source>
+                <target>Пожалуйста, введите код, изображённый на картинке. Если Вы не можете прочитать его, обновите картинку с помощью кнопки рядом с ней.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

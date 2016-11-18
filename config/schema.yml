@@ -1,0 +1,127 @@
+propel:
+  _attributes:
+    package: lib.model
+  sf_guard_user_profile:
+    _attributes: { phpName: sfGuardUserProfile }   
+    user_id:     { type: integer, foreignTable: sf_guard_user, foreignReference: id, required: true, onDelete: cascade, primaryKey: true }
+    last_name:   { type: varchar, size: '20', required: true, index: true }
+    first_name:  { type: varchar, size: '20', required: true }
+    middle_name: { type: varchar, size: '20', required: false }
+    birthday:    { type: date, required: false, index: true }
+    gender:      { type: char, size: '1', required: true, default: 'M' }
+    country:     { type: char, size: '2', required: true, index: true, default: 'RU' }
+    city_id:     { type: smallint, required: false, index: true, foreignTable: cities, foreignReference: id, onDelete: setnull }
+    institution: { type: varchar, size: '255', required: false }
+    address:     { type: varchar, size: '255', required: true, default: '' }
+    is_address_private: { type: boolean, required: true, default: 0 }
+    email:       { type: varchar, size: '100', required: true, default: 'jsc@niic.nsc.ru' }
+    phone_home:  { type: varchar, size: '40', required: false }
+    phone_work:  { type: varchar, size: '40', required: false }
+    qualification: { type: varchar, size: '30', required: false }
+    is_reviewer: { type: boolean, required: true, default: false } 
+  guard_user:
+    _attributes: { phpName: GuardUser }
+    id:             ~
+    last_name:   { type: varchar, size: '20', required: true, index: true }
+    first_name:  { type: varchar, size: '20', required: true }
+    middle_name: { type: varchar, size: '20', required: false }
+    birthday:    { type: date, required: false, index: true }
+    gender:      { type: char, size: '1', required: true, default: 'M' }
+    country:     { type: char, size: '2', required: true, index: true, default: 'RU' }
+    city_id:     { type: smallint, required: false, index: true, foreignTable: cities, foreignReference: id, onDelete: setnull }
+    institution: { type: varchar, size: '255', required: false }
+    address:     { type: varchar, size: '255', required: true, default: '' }
+    is_address_private: { type: boolean, required: true, default: 0 }
+    email:       { type: varchar, size: '100', required: true, default: 'jct@ict.nsc.ru' }
+    qualification: { type: varchar, size: '30', required: false } 
+    is_reviewer: { type: boolean, required: true, default: false }   
+    username:       { type: varchar, size: 128, required: true, index: unique }    
+    created_at:     ~
+    last_login:     { type: timestamp }
+    is_active:      { type: boolean, required: true, default: 1 }
+    is_super_admin: { type: boolean, required: true, default: 0 }  
+    _foreignKeys:
+      sf_guard_user:
+        foreignTable: sf_guard_user
+        references: 
+          - { local: id, foreign: id }
+      sf_guard_user_profile:
+        foreignTable: sf_guard_user_profile
+        references: 
+          - { local: id, foreign: user_id }      
+  cities: 
+    _attributes: { phpName: city }
+    id: { type: smallint, required: true, autoIncrement: true, primaryKey: true } 
+    name: { type: varchar, size: '30', required: true, unique: true }
+    region_id: {type: smallint, required: false, foreignTable: regions, foreignReference: id }
+    country: {type: char, size: '2', required: true, default: 'RU' }
+    
+  regions:
+    _attributes: { phpName: Region, isI18N: true, i18nTable: regions_i18n }
+    id: { type: smallint, required: true, autoIncrement: true, primaryKey: true }
+    
+  regions_i18n:
+    _attributes: { phpName: RegionI18n }
+    id: { type: smallint, required: true, primaryKey: true, foreignTable: regions, foreignReference: id }
+    culture:  { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    name: { type: varchar, size: 50 }
+    
+  manuscripts:
+    _attributes: { phpName: manuscript }
+    id: { type: integer, required: true, autoIncrement: true, primaryKey: true }
+    title: { type: varchar, size: '1000', required: true }
+    status: { type: tinyint, required: true, default: 0 }    
+    pages: {type: tinyint, required: false }
+    city_id: { type: smallint, required: false, index: true, foreignTable: cities, foreignReference: id, onDelete: setnull }
+    comment: { type: longvarchar, required: false }
+    annotation: { type: longvarchar, required: true }
+    letter: { type: longvarchar, required: false }
+    keywords_freetext: { type: varchar, size: '500', required: true }
+    reviewers_request: { type: varchar, size: '1000', required: false }
+    _indexes:
+      title: [title(10)]
+      status: [status]
+      city: [city_id]
+  publications:
+    _attributes: { phpName: Publication }
+    manuscript_id: { type: integer, foreignTable: manuscripts, foreignReference: id, required: true, primaryKey: true }
+    volume: { type: tinyint, required: true, index: true }
+    number: { type: tinyint, required: true, index: true }
+    first_page: { type: smallint, required: true }
+    last_page:  {type: smallint, required: true }
+    year: { type: smallint, required: false } 
+  users_manuscripts_ref:
+    _attributes: { phpName: userManuscriptRef }
+    user_id:     { type: integer, foreignTable: sf_guard_user_profile, foreignReference: user_id, required: true, onDelete: cascade, primaryKey: true }
+    manuscript_id: { type: integer, foreignTable: manuscripts, foreignReference: id, required: true, onDelete: cascade, primaryKey: true }
+    is_corresponding_author: { type: boolean, required: true, default: false }
+    author_order: { type: tinyint, required: true, default: 0 }
+  reviews:
+    _attributes: { phpName: review }
+    user_id: { type: integer, required: true, foreignTable: sf_guard_user_profile, foreignReference: user_id, onDelete: setnull, primaryKey: true }
+    manuscript_id: { type: integer, required: true, index: true, foreignTable: manuscripts, foreignReference: id, onDelete: setnull, primaryKey: true }    
+    contents: { type: longvarchar, required: false }
+    outcome: { type: tinyint, required: true, default: 0, index: true }
+    submitted: { type: timestamp, required: true, defaultExpr: 'CURRENT_TIMESTAMP', index: true }
+    decision: { type: tinyint, size: 1, required: false }
+  actions:
+    _attributes: { phpName: action }
+    id: { type: integer, autoIncrement: true, primaryKey: true }
+    manuscript_id: { type: integer, required: true, index: true, foreignTable: manuscripts, foreignReference: id, onDelete: cascade }
+    status_before: { type: tinyint, required: true, default: 0 }
+    status_after:  { type: tinyint, required: true, default: 0 }
+    datetime:      { type: timestamp, required: true, defaultExpr: 'CURRENT_TIMESTAMP', index: true }
+  keywords:
+    _attributes: { phpName: Keyword }
+    id: { type: integer, required: true, autoIncrement: true, index: true }
+    keyword: { type: varchar, size: '100', required: true, index: true }
+  keywords_manuscripts_ref:
+    _attributes: { phpName: KeywordManuscriptRef }
+    keyword_id: { type: integer, foreignTable: keywords, foreignReference: id, onDelete: cascade, primaryKey: true }
+    manuscript_id: { type: integer, foreignTable: manuscripts, foreignReference: id, onDelete: cascade, primaryKey: true }
+  issues:
+    _attributes: { phpName: Issue }
+    volume: { type: smallint, required: true, primaryKey: true }
+    num:    { type: smallint, required: true, primaryKey: true }
+    status: { type: tinyint,  required: true, default: 0 }
+    published_date: { type: date, required: false }                

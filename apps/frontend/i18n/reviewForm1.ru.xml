@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file orginal="global" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="1">
+                <source>manuscript</source>
+                <target>статья</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>report</source>
+                <target>краткое сообщение</target></trans-unit>
+            <trans-unit id="3">
+                <source>review</source>
+                <target>обзор</target></trans-unit>            
+            <trans-unit id="6">
+                <source>excellent</source>
+                <target>превосходно</target></trans-unit>
+            <trans-unit id="7">
+                <source>good</source>
+                <target>хорошо</target></trans-unit>
+            <trans-unit id="8">
+                <source>satisfactory</source>
+                <target>удовлетворительно</target></trans-unit>
+            <trans-unit id="9">
+                <source>bad</source>
+                <target>плохо</target></trans-unit>
+            <trans-unit id="10">
+                <source>Accept as is</source>
+                <target>Публиковать без изменений</target></trans-unit>
+            <trans-unit id="11">
+                <source>Accept after minor improvements</source>
+                <target>Публиковать после исправлений согласно прилагаемого списка</target></trans-unit>
+            <trans-unit id="12">
+                <source>Accept after major rewrite according to reviewer's comments</source>
+                <target>Статья требует серьёзной переработки и повторного рассмотрения </target></trans-unit>
+            <trans-unit id="14">
+                <source>Reject</source>
+                <target>Отклонить</target></trans-unit>            
+            <trans-unit id="22">
+                <source>General character</source>
+                <target>Общий характер материала</target></trans-unit>
+            <trans-unit id="23">
+                <source>Matches the scope of Journal of Structural Chemistry</source>
+                <target>Содержание статьи соответствует Журналу структурной химии</target></trans-unit>
+            <trans-unit id="35">
+                <source>Reviewer's recommendations</source>
+                <target>Рекомендации рецензента</target></trans-unit>
+            <trans-unit id="38">
+                <source>Reviewer's comments</source>
+                <target>КОММЕНТАРИЙ РЕЦЕНЗЕНТА</target></trans-unit>
+            <trans-unit id="39">
+                <source>File</source>
+                <target>Файл</target></trans-unit>
+            <trans-unit id="40">
+                <source>Required.</source>
+                <target>Необходимое</target></trans-unit>
+            <trans-unit id="41">
+            	<source>Is manuscript correctly formatted</source>
+            	<target>Оформлена ли рукопись в соответствии с &quot;Правилами для авторов&quot; </target>
+            </trans-unit>
+            <trans-unit id="42">
+            	<source>Are title and keywords appropriate</source>
+            	<target>Соответствуют ли название и ключевые слова содержанию работы</target></trans-unit>
+            <trans-unit id="43">
+            	<source>State in brief, what are the main points and contribution of the work</source>
+            	<target>Сформулируйте кратко, в чём заключается научный вклад работы, чем она интересна</target></trans-unit>
+            <trans-unit id="44">
+            	<source>Comments for editor only</source>
+            	<target>Замечания для редактора</target></trans-unit>
+            <trans-unit id="45">
+            	<source>Submission type</source>
+            	<target>Тип публикации</target></trans-unit>
+        </body>
+    </file>
+</xliff>
+
+

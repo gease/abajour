@@ -1,0 +1,14 @@
+rendering: ~
+security:  ~
+
+# insert your own filters here
+
+access:
+  class: paperFilter
+#allowing only admins, authors, and reviewers
+  
+# insert your own filters here
+
+cache:     ~
+common:    ~
+execution: ~

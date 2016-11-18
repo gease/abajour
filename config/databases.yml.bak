@@ -1,0 +1,18 @@
+prod:
+  propel:
+    class:          sfPropelDatabase
+    param:
+      classname:          PropelPDO     
+
+all:
+  propel:
+    class:          sfPropelDatabase
+    param:
+      classname:          DebugPDO
+      dsn:                mysql:dbname=comp_technologies;host=localhost
+      username:           root
+      password:           345     
+      encoding:           utf8      # Default charset for table creation
+      persistent:         true      # Use persistent connections
+      pooling:            true
+      

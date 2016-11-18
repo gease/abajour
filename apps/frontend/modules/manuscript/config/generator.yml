@@ -1,0 +1,37 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           manuscript
+    theme:                 my_theme         #ATTENZIONE: Not a default symfony theme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          manuscript
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields: ~       
+      list:
+        peer_method: doSelectOrderByForeignFields
+        display: [ _number, _authors, title, _city, _status, _submitted, _reviewer, _last_action ]
+        object_actions:    
+          _edit: -       
+          change_status: 
+            label: Change status 
+            action: changeStatus
+            condition:
+              function: isStatusChangeable 
+              invert: false             
+          info: { label: info, action: info }          
+        batch_actions: []
+      filter:
+        display:  [ title, review_list, user_manuscript_ref_list, status, date_submitted, city_id ]
+        class: manuscriptFormFilter
+      form:    ~
+      edit:
+       actions:
+         _list: -
+         _save: -
+      new:     ~

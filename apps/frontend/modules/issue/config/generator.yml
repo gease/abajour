@@ -1,0 +1,28 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Issue
+    theme:                 my_theme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          issue
+    with_propel_route:     1   
+    css:                   admin 
+    
+    
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        numbering: true
+        display: [ volume, num, published_date, _status ]
+ #       ordering: [ volume, published_date, status_string ]
+        batch_actions:  []
+        object_actions:
+          _edit: ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,1 @@
+<?php echo __('Page you requested is not found on the server.');?>

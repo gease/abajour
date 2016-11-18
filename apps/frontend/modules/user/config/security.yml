@@ -1,0 +1,8 @@
+default:
+  is_secure: on
+register:
+  is_secure: off
+autocomplete:
+  is_secure: off
+checkUsers:
+  is_secure: off

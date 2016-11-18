@@ -1,0 +1,49 @@
+--- plugins/sfGuardPlugin/modules/sfGuardGroup/config/generator.yml	2007-11-03 13:31:20.000000000 +0000
++++ plugins/sfGuardPlugin/modules/sfGuardGroup/config/generator.yml	2007-11-03 13:39:11.000000000 +0000
+@@ -1,5 +1,5 @@
+ generator:
+-  class:              sfPropelAdminGenerator
++  class:              sfPropel13AdminGenerator
+   param:
+     model_class:      sfGuardGroup
+     theme:            default
+--- plugins/sfGuardPlugin/modules/sfGuardPermission/config/generator.yml	2007-11-03 13:42:07.000000000 +0000
++++ plugins/sfGuardPlugin/modules/sfGuardPermission/config/generator.yml	2007-11-03 13:42:48.000000000 +0000
+@@ -1,5 +1,5 @@
+ generator:
+-  class:              sfPropelAdminGenerator
++  class:              sfPropel13AdminGenerator
+   param:
+     model_class:      sfGuardPermission
+     theme:            default
+--- plugins/sfGuardPlugin/modules/sfGuardUser/config/generator.yml	2007-11-03 13:25:46.000000000 +0000
++++ plugins/sfGuardPlugin/modules/sfGuardUser/config/generator.yml	2007-11-03 14:56:52.000000000 +0000
+@@ -1,5 +1,5 @@
+ generator:
+-  class:              sfPropelAdminGenerator
++  class:              sfPropel13AdminGenerator
+   param:
+     model_class:      sfGuardUser
+     theme:            default
+--- plugins/sfGuardPlugin/lib/model/sfGuardUser.php	2007-11-03 12:08:05.000000000 +0000
++++ plugins/sfGuardPlugin/lib/model/sfGuardUser.php	2007-11-03 14:54:34.000000000 +0000
+@@ -260,7 +260,7 @@
+     $this->allPermissions = null;
+   }
+ 
+-  public function delete($con = null)
++  public function delete(PropelPDO $con = null)
+   {
+     // delete profile if available
+     try
+--- plugins/sfGuardPlugin/lib/model/sfGuardUserGroup.php	2007-11-03 12:11:16.000000000 +0000
++++ plugins/sfGuardPlugin/lib/model/sfGuardUserGroup.php	2007-11-03 14:53:38.000000000 +0000
+@@ -17,7 +17,7 @@
+  */
+ class sfGuardUserGroup extends BasesfGuardUserGroup
+ {
+-  public function save($con = null)
++  public function save(PropelPDO $con = null)
+   {
+     parent::save($con);
+ 

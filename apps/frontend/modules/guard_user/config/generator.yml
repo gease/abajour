@@ -1,0 +1,59 @@
+generator:
+  class: myPropelGenerator
+  param:
+    model_class:           GuardUser
+    theme:                 my_theme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          guard_user
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [ =last_name, first_name, middle_name, _city_id, address, _country ]
+        peer_method: doSelectJoincity
+        object_actions: 
+          _edit: -     
+          edit_guard: 
+            label: Change user data
+            action: editGuard     
+          set_reviewer:
+            label: Promote to reviewer
+            action: setReviewer
+            params: 
+              confirm: Are you sure?
+            condition:                     #этот параметр добавлен в админ генератор, его нет в symfony
+              function: getIsReviewer
+              invert: true 
+          unset_reviewer:
+            label: Demote from reviewer
+            action: unsetReviewer
+            params: 
+              confirm:  Are you sure?
+            condition:
+              function: getIsReviewer
+              invert: false
+          info:
+            label: Info
+            action: info            
+        batch_actions: {}              
+      filter:
+        class: GuardUserFormFilter
+        display: [ city_id, last_name, first_name, birthday, gender, institution, email, is_reviewer, is_active, manuscripts, reviews, reviewed_authors ]
+      form:    
+        class: profileAdminForm
+      edit:    
+        title: Edit user profile
+        actions:
+          _list: ~
+          _save: ~
+      new:     
+        title: New user
+        actions:
+          _list: ~
+          _save: ~  
+          _save_and_add: ~          
