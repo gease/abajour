@@ -1,14 +1,11 @@
-# Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-
-# Cache and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
+cache/
+apps/frontend/config/app.yml
+log/
+logs/
+uploads/
+web/info.php
+.project
+.idea/
 
 # Parameters
 /app/config/parameters.yml
