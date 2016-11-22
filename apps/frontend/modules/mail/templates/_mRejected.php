@@ -11,9 +11,7 @@
  */
 ?>
 
-<?php
-include_partial('mail/mBegin');
-?>
+<?php include_partial('mail/mBegin', array('to' => $to)); ?>
 <?php echo __('I have to inform you that your manuscript entitled "%1" is rejected by editorial board of Journal of Structural Chemistry.', array('%1'=>$manuscript->getTitle()))."<br>";?>
 <?php
 $review = $manuscript->getLastReview();

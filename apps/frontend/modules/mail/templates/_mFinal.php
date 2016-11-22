@@ -11,7 +11,7 @@
  */
 ?>
 
-<?php include_partial('mail/mBegin');?>
+<?php include_partial('mail/mBegin', array('to' => $to));?>
 <?php echo __('Please check the corrections made by authors of %1 %2 according to your remarks.', array('%1'=>get_partial('manuscript/authors', array('manuscript'=>$manuscript)),'%2'=>$manuscript->getTitle()))."<br><br>";?>
 <?php echo __('Please reply with your final decision within two weeks if possible.').'<br><br>';?>
 <?php include_partial('mail/mSign'); ?>

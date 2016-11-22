@@ -11,7 +11,7 @@
  */
 ?>
 
-<?php include_partial('mail/mBegin');?>
+<?php include_partial('mail/mBegin', array('to' => $to));?>
 <?php echo __('Editorial board of Journal of Structural Chemistry would like to ask you to write a review on manuscript entitled "%1" by %2.', array('%1'=>$manuscript->getTitle(), '%2'=>get_partial('manuscript/authors', array('manuscript'=>$manuscript))))."<br>";?>
 <?php echo __("We would appreciate if you could provide your review within 2 weeks. Thank you in advance for your assistance.")."<br><br>";?>
 <?php include_partial('mail/mSign');?>

@@ -11,6 +11,6 @@
  */
 ?>
 
-<?php include_partial('mail/mBegin');?>
+<?php include_partial('mail/mBegin', array('to' => $to));?>
 <?php echo __('We have received your manuscript entitled "%1" and will forward it to reviewer soon.', array('%1'=>$manuscript->getTitle()))."<br><br>";?>
 <?php include_partial('mail/mSign');?>
