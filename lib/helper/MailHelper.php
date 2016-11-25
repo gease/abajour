@@ -21,6 +21,10 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 		$smtp = new Swift_Connection_SMTP(sfConfig::get('app_mail_server'));
 		$smtp->setUsername(sfConfig::get('app_mail_login'));
 		$smtp->setPassword(sfConfig::get('app_mail_password'));
+    if (sfConfig::get(('app_mail_secure'))) {
+      $smtp->setPort($smtp::PORT_SECURE);
+      $smtp->setEncryption($smtp::ENC_TLS);
+    }
   		$mailer = new Swift($smtp);
   		if (empty($attachments) && empty($html_attachments))
   		    $message = new Swift_Message($subject, $body, $format);
