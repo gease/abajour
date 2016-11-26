@@ -273,7 +273,7 @@ class manuscriptActions extends autoManuscriptActions
     		case manuscriptPeer::UNDER_REWRITE:   $template = 'mRewrite';  break;
     	}
     	$culture_current = sfContext::getInstance()->getI18N()->getCulture();
-    	if (in_array($to->getCountry(), sfConfig::get('app_mail_ru_lang')))
+    	if (in_array($to->getCountry(), sfConfig::get('app_ru_lang')))
     	   sfContext::getInstance()->getI18N()->setCulture('ru');
         else sfContext::getInstance()->getI18N()->setCulture('en');
     	$subject = sfContext::getInstance()->getI18N()->__('Manuscript').' '.sfContext::getInstance()->getI18N()->__($manuscript->getStatusString());
