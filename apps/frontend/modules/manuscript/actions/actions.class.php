@@ -302,13 +302,13 @@ class manuscriptActions extends autoManuscriptActions
     		$filename = $review->getFilename();
             if (!is_null($filename)) $attachments['review1'] = $filename;
     	}
-        if ($template == 'mReject')
+        if ($template == 'mRejected')
         {
             $review = $manuscript->getLastReview();
             if (!is_null($review))
             {
-                $html_attachments['review'] = get_partial('reviewer/form', array('form' => new reviewSubmitForm($review)));
-                $html_attachments['review'] = '<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head>'.$html_attachments['review1'];
+                $html_attachments['review.html'] = get_partial('mail/mReviewForm', array('review' => $review));
+                $html_attachments['review.html'] = '<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head>'.$html_attachments['review.html'];
                 $filename = $review->getFilename();
                 if (!is_null($filename)) $attachments['review'] = $filename;
             }
