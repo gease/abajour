@@ -17,6 +17,6 @@
     <?php echo $to->getMiddleName(); ?>
   <?php endif; ?>
 <?php else: ?>
-  <?php echo $to->getFirstName() . " " . $to->getLastName(); ?>
+  <?php echo 'Dr.' . $to->getFirstName() . " " . $to->getLastName(); ?>
 <?php endif; ?>
 <?php echo ",<br>";?>
