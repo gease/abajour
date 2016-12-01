@@ -1,0 +1,29 @@
+# default values
+all:
+  mail:
+    server:   localhost #address of smtp server
+    from:     xxx@somewhere.com #from header in e-mails sent
+    secure:   on #if smtp uses tls and corresponding port
+    login:    111 #login for smtp server, may be left blank
+    password: 111 #password for smtp server, may be left blank
+    admin:    xxxx@somewhere.com
+    support:  xxxxx@somewhere.com #just an address indicated somewhere on the site
+    enabled:  on #enable e-mail sending
+    to_admin: off #whether mail is redirected to admin instead of real recipients
+    ru_lang:  [ 'RU', 'KZ', 'UA', 'AZ', 'AM', 'BY', 'GE', 'KG', 'MD', 'TJ', 'TM', 'UZ' ] #country codes to use russian for e-mails
+   birthday:
+    min: 1910
+    max: 2000
+  file:
+    mime: [ 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ]
+    size: 2300000
+    extra_archive: on
+    archive_mime: ['application/x-gzip', 'application/zip', 'application/x-zip-compressed', 'application/x-compressed' ]
+  journal_years:
+    min: 1995
+    max: 2015
+  default_password: 1111
+  .array:
+    age_split: [25, 35, 45, 55, 65]
+  issues: 6
+  review_class: reviewSubmitForm1
