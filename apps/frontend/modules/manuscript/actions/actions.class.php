@@ -273,7 +273,7 @@ class manuscriptActions extends autoManuscriptActions
     		case manuscriptPeer::UNDER_REWRITE:   $template = 'mRewrite';  break;
     	}
     	$culture_current = sfContext::getInstance()->getI18N()->getCulture();
-    	if (in_array($to->getCountry(), sfConfig::get('app_ru_lang')))
+    	if (in_array($to->getCountry(), sfConfig::get('app_mail_ru_lang')))
     	   sfContext::getInstance()->getI18N()->setCulture('ru');
         else sfContext::getInstance()->getI18N()->setCulture('en');
     	$subject = sfContext::getInstance()->getI18N()->__('Manuscript').' '.sfContext::getInstance()->getI18N()->__($manuscript->getStatusString());
@@ -307,8 +307,8 @@ class manuscriptActions extends autoManuscriptActions
             $review = $manuscript->getLastReview();
             if (!is_null($review))
             {
-                $html_attachments['review.html'] = get_partial('mail/mReviewForm', array('review' => $review));
-                $html_attachments['review.html'] = '<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head>'.$html_attachments['review.html'];
+                $html_attachments['review'] = get_partial('mail/mReviewForm', array('review' => $review));
+                $html_attachments['review'] = '<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head>'.$html_attachments['review'];
                 $filename = $review->getFilename();
                 if (!is_null($filename)) $attachments['review'] = $filename;
             }
