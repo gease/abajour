@@ -36,7 +36,7 @@ dev:
   user:
     class: myUser
     param:
-      timeout: false
+      timeout: 86400 #24 hours
 
 #all:
 #  controller:
