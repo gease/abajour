@@ -490,10 +490,11 @@ class manuscript extends Basemanuscript {
       foreach ($extra_files as $action=>$data) {
         $files[] = $data['filename'];
       }
-      $this->getFilesystem()->remove($files);
+      $filesystem = new sfFilesystem();
+      $filesystem->remove($files);
       //файлы рецензии
       $review_files = $this->getReviewFilenames();
-      $this->getFilesystem()->remove($review_files);
+      $filesystem->remove($review_files);
       //затем саму статью
       parent::delete($con);
     }
