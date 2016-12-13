@@ -24,7 +24,8 @@ generator:
             condition:
               function: isStatusChangeable 
               invert: false             
-          info: { label: info, action: info }          
+          info: { label: info, action: info }
+          _delete: -
         batch_actions: []
       filter:
         display:  [ title, review_list, user_manuscript_ref_list, status, date_submitted, city_id ]
