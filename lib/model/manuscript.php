@@ -478,4 +478,23 @@ class manuscript extends Basemanuscript {
     	$raw = parent::getTitle();
     	return strip_tags($raw, '<sub><sup><i>');
     }
+
+    public function delete(PropelPDO $con = null) {
+      $man_files = $this->getFilesNumber();
+      $files = array();
+      foreach ($man_files as $action=>$data) {
+        $files[] = $data['filename'];
+      }
+      //убрать дополнительные файлы
+      $extra_files = $this->getExtraFilesNumber();
+      foreach ($extra_files as $action=>$data) {
+        $files[] = $data['filename'];
+      }
+      $this->getFilesystem()->remove($files);
+      //файлы рецензии
+      $review_files = $this->getReviewFilenames();
+      $this->getFilesystem()->remove($review_files);
+      //затем саму статью
+      parent::delete($con);
+    }
 } // manuscript

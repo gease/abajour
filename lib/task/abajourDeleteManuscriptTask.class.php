@@ -52,21 +52,6 @@ EOF;
     //убрать файлы
     if (!$this->askConfirmation("Do you really want to permanently delete manuscript entitled ".
             mb_convert_encoding($manuscript,'cp866','utf-8'))) return;
-    $man_files = $manuscript->getFilesNumber();
-    $files = array();
-    foreach ($man_files as $action=>$data) {
-       $files[] = $data['filename'];
-    }
-    //убрать дополнительные файлы
-    $extra_files = $manuscript->getExtraFilesNumber();
-    foreach ($extra_files as $action=>$data) {
-       $files[] = $data['filename'];
-    }
-    $this->getFilesystem()->remove($files);
-    //файлы рецензии
-    $review_files = $manuscript->getReviewFilenames();
-    $this->getFilesystem()->remove($review_files);
-    //затем саму статью
     $manuscript->delete();
   }
 }
