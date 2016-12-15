@@ -25,8 +25,8 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
       $smtp->setPort($smtp::PORT_SECURE);
       $smtp->setEncryption($smtp::ENC_TLS);
     }
-    if (sfConfig::get('add_mail_custom_port')) {
-    	$smtp->setPort(sfConfig::get('add_mail_custom_port'));
+    if (sfConfig::get('app_mail_custom_port')) {
+    	$smtp->setPort(sfConfig::get('app_mail_custom_port'));
 		}
 		$mailer = new Swift($smtp);
 		if (empty($attachments) && empty($html_attachments))
