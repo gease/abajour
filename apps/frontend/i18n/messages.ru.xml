@@ -766,6 +766,10 @@
         <source>Manuscript submitted successfully.</source>
         <target>Рукопись успешно отправлена.</target>
       </trans-unit>
+      <trans-unit id="194">
+        <source>Reply submitted successfully.</source>
+        <target>Ответ успешно отправлен.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

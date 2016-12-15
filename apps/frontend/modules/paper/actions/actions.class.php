@@ -217,7 +217,13 @@ class paperActions extends sfActions
         }
         
         if ($this->getUser()->hasCredential('admin')) $this->redirect('manuscript');
-        else $this->redirect('user');
+        else {
+          $this->getUser()->setFlash('info', _('Reply submitted successfully.'));
+          $this->redirect($this->generateUrl('user', $this->getUser()
+            ->getGuardUser()
+            ->getProfile()));
+
+        }
   }
   
   /**
