@@ -3,7 +3,8 @@ all:
   mail:
     server:   localhost #address of smtp server
     from:     xxx@somewhere.com #from header in e-mails sent
-    secure:   on #if smtp uses tls and corresponding port
+    secure:   on #if smtp uses tls and corresponding port 465
+#   custom_port: if smtp port is neither 25 nor 465
     login:    111 #login for smtp server, may be left blank
     password: 111 #password for smtp server, may be left blank
     admin:    xxxx@somewhere.com
