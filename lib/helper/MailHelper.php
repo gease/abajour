@@ -1,6 +1,5 @@
 <?php
-require_once(sfConfig::get('sf_vendor_dir').'/swift/Swift.php');
-require_once(sfConfig::get('sf_vendor_dir').'/swift/Swift/Connection/SMTP.php');
+require_once __DIR__ . '/../vendor/swift/swift_required.php';
 
 /**
  *
@@ -18,27 +17,21 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 	try
 	{
 	// Create the mailer and message objects
-		$smtp = new Swift_Connection_SMTP(sfConfig::get('app_mail_server'));
-		$smtp->setUsername(sfConfig::get('app_mail_login'));
-		$smtp->setPassword(sfConfig::get('app_mail_password'));
-    if (sfConfig::get('app_mail_secure')) {
-      $smtp->setPort($smtp::PORT_SECURE);
-      $smtp->setEncryption($smtp::ENC_TLS);
+		$smtp = Swift_SmtpTransport::newInstance(sfConfig::get('app_mail_server'))
+		  ->setUsername(sfConfig::get('app_mail_login'))
+		  ->setPassword(sfConfig::get('app_mail_password'));
+    if (sfConfig::get('app_mail_port')) {
+      $smtp->setPort(sfConfig::get('app_mail_port'));
     }
-    if (sfConfig::get('app_mail_custom_port')) {
-    	$smtp->setPort(sfConfig::get('app_mail_custom_port'));
+    if (sfConfig::get('app_mail_encryption')) {
+    	$smtp->setEncryption(sfConfig::get('app_mail_encryption'));
 		}
-		$mailer = new Swift($smtp);
-		if (empty($attachments) && empty($html_attachments))
-			$message = new Swift_Message($subject, $body, $format);
-		else
-		{
-			$message = new Swift_Message($subject);
-			$message->attach(new Swift_Message_Part($body, $format));
-		}
-		$recipients = new Swift_RecipientList();
-		$recipients->addTo($to);
-		if (!empty($cc)) $recipients->addCc($cc);
+		$mailer = new Swift_Mailer($smtp);
+    $message = Swift_Message::newInstance($subject)
+      ->setBody($body)
+      ->setFormat($format)
+      ->setTo(array($to));
+    if (!empty($cc)) $message->setCc(array($cc));
 		foreach ($attachments as $name=>$file)
 		{
 			$ext = substr($file, strrpos($file, '.'));
@@ -49,12 +42,11 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 			{
 				if ($ext == 'docx') $mimeType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 			}
-			$message->attach(new Swift_Message_Attachment(
-        	   new Swift_File($file), $name.$ext, $mimeType));
+			$message->attach(SwiftAttachment::fromPath($file), $mimeType);
 		}
 		foreach ($html_attachments as $name=>$contents)
 		{
-			$message->attach(new Swift_Message_Attachment($contents, $name, 'text/html'));
+			$message->attach(new SwiftAttachment($contents, $name, 'text/html'));
 		}
 		// Send
 		$mailer->send($message, $recipients, $from);
