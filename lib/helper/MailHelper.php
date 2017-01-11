@@ -28,6 +28,7 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 		}
 		$mailer = new Swift_Mailer($smtp);
     $message = Swift_Message::newInstance($subject)
+      ->setFrom(array(sfConfig::get('app_mail_from')))
       ->setBody($body)
       ->setFormat($format)
       ->setTo(array($to));
