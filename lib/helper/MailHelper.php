@@ -50,11 +50,9 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 		}
 		// Send
 		$mailer->send($message, $recipients, $from);
-		$mailer->disconnect();
 	}
 	catch (Exception $e)
 	{
-		if ($mailer) $mailer->disconnect();
 		sfContext::getInstance()->getLogger()->err(sprintf('sending mail failed: %s', $e->getMessage()));
 		sfContext::getInstance()->getUser()->setFlash('error', 'Sending mail failed.');
 	}
