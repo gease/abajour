@@ -43,11 +43,11 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 			{
 				if ($ext == 'docx') $mimeType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 			}
-			$message->attach(SwiftAttachment::fromPath($file), $mimeType);
+			$message->attach(Swift_Attachment::fromPath($file), $mimeType);
 		}
 		foreach ($html_attachments as $name=>$contents)
 		{
-			$message->attach(new SwiftAttachment($contents, $name, 'text/html'));
+			$message->attach(Swift_Attachment::newInstance($contents, $name, 'text/html'));
 		}
 		// Send
 		$mailer->send($message, $recipients, $from);
