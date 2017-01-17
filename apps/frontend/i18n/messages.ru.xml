@@ -231,8 +231,8 @@
         <target>Публиковать с минимальными изменениями</target>
       </trans-unit>
       <trans-unit id="58">
-        <source>Accept after major rewrite according to reviewer's comments</source>
-        <target>Публиковать после изменений, сделанных с учетом прилагаемых комментариев рецензента </target>
+        <source>Send to authors for major rework</source>
+        <target>Отправить авторам на доработку с учётом замечаний рецензента</target>
       </trans-unit>
       <trans-unit id="59">
         <source>Rewrite and submit as brief communication</source>

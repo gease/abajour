@@ -31,8 +31,8 @@
                 <source>Accept after minor improvements</source>
                 <target>Публиковать после исправлений согласно прилагаемого списка</target></trans-unit>
             <trans-unit id="12">
-                <source>Accept after major rewrite according to reviewer's comments</source>
-                <target>Статья требует серьёзной переработки и повторного рассмотрения </target></trans-unit>
+                <source>Send to authors for major rework</source>
+                <target>Отправить авторам на доработку с учётом замечаний рецензента</target></trans-unit>
             <trans-unit id="14">
                 <source>Reject</source>
                 <target>Отклонить</target></trans-unit>            

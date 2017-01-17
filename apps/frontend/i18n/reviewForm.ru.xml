@@ -38,8 +38,8 @@
                 <source>Accept after minor improvements</source>
                 <target>Публиковать с минимальными изменениями</target></trans-unit>
             <trans-unit id="12">
-                <source>Accept after major rewrite according to reviewer's comments</source>
-                <target>Публиковать после изменений, сделанных с учетом прилагаемых комментариев рецензента </target></trans-unit>
+                <source>Send to authors for major rework</source>
+                <target>Отправить авторам на доработку с учётом замечаний рецензента</target></trans-unit>
             <trans-unit id="13">
                 <source>Rewrite and submit as brief communication</source>
                 <target>Переработать и представить в качестве короткого сообщения </target></trans-unit>

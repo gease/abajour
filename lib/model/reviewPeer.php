@@ -32,7 +32,7 @@ class reviewPeer extends BasereviewPeer {
         {
         	case self::UNREVIEWED:     $string = 'Unreviewed'; break;
         	case self::ACCEPT:         $string = 'Accept as is'; break;
-        	case self::ACCEPT_COMMENT: $string = "Accept after major rewrite according to reviewer's comments"; break;
+        	case self::ACCEPT_COMMENT: $string = 'Send to authors for major rework'; break;
         	case self::ACCEPT_SMALL:   $string = 'Accept after minor improvements'; break;
         	case self::REVISE:         $string = 'Rewrite and submit as brief communication'; break;
         	case self::REJECT:         $string = 'Reject'; break;
