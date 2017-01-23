@@ -27,12 +27,24 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text/pla
     	$smtp->setEncryption(sfConfig::get('app_mail_encryption'));
 		}
 		$mailer = new Swift_Mailer($smtp);
+    if (sfConfig::get('app_mail_to_admin')) {
+      $to = sfConfig::get('app_mail_admin');
+    }
+    /* @var $message Swift_Message */
     $message = Swift_Message::newInstance($subject)
       ->setFrom(array(sfConfig::get('app_mail_from')))
       ->setBody($body)
       ->setFormat($format)
       ->setTo(array($to));
-    if (!empty($cc)) $message->setCc(array($cc));
+    if (!empty($cc) && is_array($cc)) {
+      $message->setCc($cc);
+    }
+    else {
+      $message->addCc($cc);
+    }
+    if ($to != sfConfig::get('app_mail_admin')) {
+      $message->addBcc(sfConfig::get('app_mail_admin'));
+    }
 		foreach ($attachments as $name=>$file)
 		{
 			$ext = substr($file, strrpos($file, '.'));

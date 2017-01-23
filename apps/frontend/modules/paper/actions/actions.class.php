@@ -230,12 +230,8 @@ class paperActions extends sfActions
         $subject = sfContext::getInstance()->getI18N()->__('Manuscript').' '.sfContext::getInstance()->getI18N()->__($manuscript->getStatusString());
         $body = $this->getPartial('mail/mFinal', array('to'=>$to, 'manuscript'=>$manuscript));
         $attachments = array();
-        if (sfConfig::get('app_mail_to_admin')) $to_email = sfConfig::get('app_mail_admin');
-        else
-        {
-            if (!$to->getsfGuardUser()->getIsActive()) return;
-            else $to_email = $to->getEmail();
-        }
+        if (!$to->getsfGuardUser()->getIsActive()) return;
+        else $to_email = $to->getEmail();
         $filename = $manuscript->getLastFilename();
         if (!is_null($filename)) $attachments['revised'] = $filename;
         $extra_filename = $manuscript->getLastExtraFilename();

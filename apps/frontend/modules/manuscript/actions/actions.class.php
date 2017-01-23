@@ -280,12 +280,10 @@ class manuscriptActions extends autoManuscriptActions
     	$body = $this->getPartial('mail/'.$template, array('to'=>$to, 'manuscript'=>$manuscript));
     	$attachments = array();
     	$html_attachments = array();
-    	if (sfConfig::get('app_mail_to_admin')) $to_email = sfConfig::get('app_mail_admin');
-        else
-        {
-        	if (!$to->getsfGuardUser()->getIsActive()) return;
-            else { $to_email = $to->getEmail(); $cc_email = sfConfig::get('app_mail_admin');}
-        }
+      if (!$to->getsfGuardUser()->getIsActive()) return;
+      else {
+        $to_email = $to->getEmail();
+      }
     	if ($template == 'mReview')
     	{
     		$filename = $manuscript->getLastFilename();
@@ -314,7 +312,7 @@ class manuscriptActions extends autoManuscriptActions
             }
         }
     	sfProjectConfiguration::getActive()->loadHelpers('Mail');
-    	send_mail($subject, $body, $attachments, $to_email, $cc_email, 'text/html', $html_attachments);
+    	send_mail($subject, $body, $attachments, $to_email, null, 'text/html', $html_attachments);
         sfContext::getInstance()->getI18N()->setCulture($culture_current);
     }
     
