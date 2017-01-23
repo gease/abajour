@@ -12,7 +12,7 @@ require_once __DIR__ . '/../vendor/swift/swift_required.php';
  * @param array|\unknown_type $html_attachments
  * @internal param \unknown_type $from
  */
-function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text/plain', $html_attachments = array())
+function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $html_attachments = array())
 {
 	try
 	{
@@ -34,7 +34,6 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text/pla
     $message = Swift_Message::newInstance($subject)
       ->setFrom(array(sfConfig::get('app_mail_from')))
       ->setBody($body)
-      ->setFormat($format)
       ->setTo(array($to));
     if (!empty($cc) && is_array($cc)) {
       $message->setCc($cc);
@@ -59,7 +58,7 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text/pla
 		}
 		foreach ($html_attachments as $name=>$contents)
 		{
-			$message->attach(Swift_Attachment::newInstance($contents, $name, 'text/html'));
+			$message->attach(Swift_Attachment::newInstance($contents, $name, 'text/html')->setDisposition('inline'));
 		}
 		// Send
 		$mailer->send($message);

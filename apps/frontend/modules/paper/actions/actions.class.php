@@ -58,7 +58,7 @@ class paperActions extends sfActions
   			if (sfConfig::get('app_mail_enabled'))
   			{
   			   sfProjectConfiguration::getActive()->loadHelpers('Mail');
-  			   send_mail('Новая статья', sprintf("Поступила новая статья \"%s\" авторов %s", $manuscript->getTitle(), $this->getPartial('manuscript/authors', array('manuscript' => $manuscript))), array(), sfConfig::get('app_mail_admin'), NULL, 'text/html'
+  			   send_mail('Новая статья', sprintf("Поступила новая статья \"%s\" авторов %s", $manuscript->getTitle(), $this->getPartial('manuscript/authors', array('manuscript' => $manuscript))), array(), sfConfig::get('app_mail_admin'), NULL, 'html'
   			               );
   			}
   			$manuscript->save(); //to obtain id' for action
@@ -196,7 +196,7 @@ class paperActions extends sfActions
         	$review = $this->manuscript->getLastReview();
         	sfProjectConfiguration::getActive()->loadHelpers('Mail');
         	if ($this->manuscript->getStatus() == manuscriptPeer::REVIEWER_REJECT)
-               send_mail('Рецензент отклонён', sprintf("Авторы  %s статьи %s отклонили рецензента %s", $this->getPartial('manuscript/authors', array('manuscript' => $this->manuscript)), $this->manuscript->getTitle(), $review->getsfGuardUserProfile()), array(), sfConfig::get('app_mail_admin'), NULL, 'text/html'
+               send_mail('Рецензент отклонён', sprintf("Авторы  %s статьи %s отклонили рецензента %s", $this->getPartial('manuscript/authors', array('manuscript' => $this->manuscript)), $this->manuscript->getTitle(), $review->getsfGuardUserProfile()), array(), sfConfig::get('app_mail_admin'), NULL, 'html'
                            );
             if ($this->manuscript->getStatus() == manuscriptPeer::REVIEW_FINAL)
             {
@@ -237,7 +237,7 @@ class paperActions extends sfActions
         $extra_filename = $manuscript->getLastExtraFilename();
         if (!is_null($extra_filename)) $attachments['supplement'] = $extra_filename;
         sfProjectConfiguration::getActive()->loadHelpers('Mail');
-        send_mail($subject, $body, $attachments, $to_email, NULL, 'text/html');
+        send_mail($subject, $body, $attachments, $to_email, NULL, 'html');
         sfContext::getInstance()->getI18N()->setCulture($culture_current);
     }
 }
