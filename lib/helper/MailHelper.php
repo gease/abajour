@@ -8,11 +8,11 @@ require_once __DIR__ . '/../vendor/swift/swift_required.php';
  * @param unknown_type $attachments
  * @param unknown_type $to
  * @param unknown_type $cc
- * @param unknown_type $from
- * @param unknown_type $format
- * @param unknown_type $html_attachments
+ * @param string|\unknown_type $format
+ * @param array|\unknown_type $html_attachments
+ * @internal param \unknown_type $from
  */
-function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 'text/plain', $html_attachments = array())
+function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text/plain', $html_attachments = array())
 {
 	try
 	{
@@ -50,7 +50,7 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $from, $format = 't
 			$message->attach(Swift_Attachment::newInstance($contents, $name, 'text/html'));
 		}
 		// Send
-		$mailer->send($message, $recipients, $from);
+		$mailer->send($message);
 	}
 	catch (Exception $e)
 	{

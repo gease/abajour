@@ -77,13 +77,8 @@ class reviewerActions extends sfActions
         if (sfConfig::get('app_mail_enabled'))
         {
             sfProjectConfiguration::getActive()->loadHelpers('Mail');
-            send_mail('Новая рецензия',
-                sprintf( "Поступила рецензия на статью %s авторов %s", $review->getmanuscript()->getTitle(), $this->getPartial('manuscript/authors', array('manuscript'=>$review->getmanuscript()))),
-                    array(),
-                    sfConfig::get('app_mail_admin'),
-                    null,
-                    sfConfig::get('app_mail_admin'),
-                    'text/html'
+            send_mail('Новая рецензия', sprintf("Поступила рецензия на статью %s авторов %s", $review->getmanuscript()
+              ->getTitle(), $this->getPartial('manuscript/authors', array('manuscript' => $review->getmanuscript()))), array(), sfConfig::get('app_mail_admin'), NULL, 'text/html'
             );
         }
   		$this->redirect(array(
@@ -139,16 +134,10 @@ class reviewerActions extends sfActions
     if (sfConfig::get('app_mail_enabled'))
     {
         sfProjectConfiguration::getActive()->loadHelpers('Mail');
-        send_mail('Новая рецензия',
-              sprintf( "Рецензент %s отказался рецензировать статью %s авторов %s",
-                                $review->getsfGuardUserProfile(),
-                                $review->getmanuscript()->getTitle(),
-                                $this->getPartial('manuscript/authors', array('manuscript'=>$review->getmanuscript()))),
-                    array(),
-                    sfConfig::get('app_mail_admin'),
-                    null,
-                    sfConfig::get('app_mail_admin'),
-                    'text/html'
+        send_mail('Новая рецензия', sprintf("Рецензент %s отказался рецензировать статью %s авторов %s",
+          $review->getsfGuardUserProfile(),
+          $review->getmanuscript()->getTitle(),
+          $this->getPartial('manuscript/authors', array('manuscript' => $review->getmanuscript()))), array(), sfConfig::get('app_mail_admin'), NULL, 'text/html'
         );
     }
   	$this->redirect('@user?user_id='.$review->getUserId());

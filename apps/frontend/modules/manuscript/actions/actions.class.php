@@ -314,7 +314,7 @@ class manuscriptActions extends autoManuscriptActions
             }
         }
     	sfProjectConfiguration::getActive()->loadHelpers('Mail');
-    	send_mail($subject, $body, $attachments, $to_email, $cc_email, sfConfig::get('app_mail_admin'), 'text/html', $html_attachments);
+    	send_mail($subject, $body, $attachments, $to_email, $cc_email, 'text/html', $html_attachments);
         sfContext::getInstance()->getI18N()->setCulture($culture_current);
     }
     
