@@ -35,11 +35,13 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
       ->setFrom(array(sfConfig::get('app_mail_from')))
       ->setTo(array($to))
       ->setBody($body);
-    if (!empty($cc) && is_array($cc)) {
-      $message->setCc($cc);
-    }
-    else {
-      $message->addCc($cc);
+    if (!empty($cc)) {
+      if (is_array($cc)) {
+        $message->setCc($cc);
+      }
+      else {
+        $message->addCc($cc);
+      }
     }
     if ($to != sfConfig::get('app_mail_admin')) {
       $message->addBcc(sfConfig::get('app_mail_admin'));
