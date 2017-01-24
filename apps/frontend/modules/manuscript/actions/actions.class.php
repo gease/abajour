@@ -172,19 +172,14 @@ class manuscriptActions extends autoManuscriptActions
 			default: break;
 		}
 		$this->manuscript->save();
-		if (sfConfig::get('app_mail_enabled'))
-		{
-		  //sfLoader::loadHelpers(array('Mail'));
-		  //if ($this->manuscript->getStatus() == manuscriptPeer::REJECT) send_mail_reject($this->manuscript->getCorrespondingAuthor()->getEmail());
-		  if (in_array ($this->manuscript->getStatus(),
-		              array(manuscriptPeer::ACCEPTED_REVIEW,
-		                    manuscriptPeer::PENDING,
-		                    manuscriptPeer::REJECT,
-		                    manuscriptPeer::UNDER_REWRITE )))
-		          $this->sendMail($this->manuscript, $this->manuscript->getCorrespondingAuthor());
-		  if ($this->manuscript->getStatus() == manuscriptPeer::UNDER_REVIEW)
-		          $this->sendMail($this->manuscript, sfGuardUserProfilePeer::retrieveByPK($this->form->getValue('reviewer')));
-		}
+    if (in_array ($this->manuscript->getStatus(),
+      array(manuscriptPeer::ACCEPTED_REVIEW,
+        manuscriptPeer::PENDING,
+        manuscriptPeer::REJECT,
+        manuscriptPeer::UNDER_REWRITE )))
+      $this->sendMail($this->manuscript, $this->manuscript->getCorrespondingAuthor());
+    if ($this->manuscript->getStatus() == manuscriptPeer::UNDER_REVIEW)
+      $this->sendMail($this->manuscript, sfGuardUserProfilePeer::retrieveByPK($this->form->getValue('reviewer')));
 		$this->redirect('manuscript');
 	}
 

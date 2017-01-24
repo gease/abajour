@@ -33,8 +33,8 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
     /* @var $message Swift_Message */
     $message = Swift_Message::newInstance($subject)
       ->setFrom(array(sfConfig::get('app_mail_from')))
-      ->setBody($body)
-      ->setTo(array($to));
+      ->setTo(array($to))
+      ->setBody($body);
     if (!empty($cc) && is_array($cc)) {
       $message->setCc($cc);
     }
@@ -61,7 +61,13 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
 			$message->attach(Swift_Attachment::newInstance($contents, $name, 'text/html')->setDisposition('inline'));
 		}
 		// Send
-		$mailer->send($message);
+    if (sfConfig::get('app_mail_enabled')) {
+      $mailer->send($message);
+    }
+    else {
+      sfContext::getInstance()->getLogger()->debug($message->toString());
+    }
+
 	}
 	catch (Exception $e)
 	{

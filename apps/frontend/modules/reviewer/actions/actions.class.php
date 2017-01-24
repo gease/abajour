@@ -10,16 +10,16 @@
  */
 class reviewerActions extends sfActions
 {
- /**
-  * Executes index action
-  *
-  * @param sfRequest $request A request object
-  */
+  /**
+   * Executes index action
+   *
+   * @param sfRequest $request A request object
+   */
   public function executeIndex(sfWebRequest $request)
   {
     $this->forward('default', 'module');
   }
-  
+
   /**
    * Submit review
    *
@@ -41,10 +41,10 @@ class reviewerActions extends sfActions
    */
   public function executeEditFinal (sfWebRequest $request)
   {
-  	$this->object = $this->getRoute()->getObject();
+    $this->object = $this->getRoute()->getObject();
     $this->form = new reviewForm($this->object);
   }
-  
+
   /**
    * Review form processing
    *
@@ -52,39 +52,36 @@ class reviewerActions extends sfActions
    */
   public function executeSubmit(sfWebRequest $request)
   {
-        $this->object = $this->getRoute()->getObject();
-  		$data = $request->getPostParameter('submit_review');
-  		$files = $request->getFiles('submit_review');
-  		$this->form = reviewPeer::getForm($this->object);
-  		$this->form->bind($data, $files);
-  		if (!$this->form->isValid()) return;
-  		$review = $this->form->updateObject();
-  		if (!$review->equals($this->object)) return; //если изменены скрытые поля формы
-  		$review->getmanuscript()->setStatus(manuscriptPeer::AFTER_REVIEW);
-  		$review->save();
-  		if ($file = $this->form->getValue('file'))
-  		{
-  			$i = 0;
-            do
-	        {
-	           $filename =  'r_'.$review->getManuscriptId().'_'.$review->getUserId().'_'.$i;
-               $files = sfFinder::type('file')->name($filename.'.*')->in(sfConfig::get('sf_upload_dir'));
-               $i++;
-            } while ($files);
-            $extension = $file->getExtension($file->getOriginalExtension());
-            $file->save(sfConfig::get('sf_upload_dir').'/'.$filename.$extension);
-  		}
-        if (sfConfig::get('app_mail_enabled'))
-        {
-            sfProjectConfiguration::getActive()->loadHelpers('Mail');
-            send_mail('Новая рецензия', sprintf("Поступила рецензия на статью %s авторов %s", $review->getmanuscript()
-              ->getTitle(), $this->getPartial('manuscript/authors', array('manuscript' => $review->getmanuscript()))), array(), sfConfig::get('app_mail_admin'), NULL, 'html'
-            );
-        }
-  		$this->redirect(array(
-  		    'sf_route' => 'list_reviews',
-  		    'user_id' =>  $this->form->getValue('user_id')
-  		));
+    $this->object = $this->getRoute()->getObject();
+    $data = $request->getPostParameter('submit_review');
+    $files = $request->getFiles('submit_review');
+    $this->form = reviewPeer::getForm($this->object);
+    $this->form->bind($data, $files);
+    if (!$this->form->isValid()) return;
+    $review = $this->form->updateObject();
+    if (!$review->equals($this->object)) return; //если изменены скрытые поля формы
+    $review->getmanuscript()->setStatus(manuscriptPeer::AFTER_REVIEW);
+    $review->save();
+    if ($file = $this->form->getValue('file'))
+    {
+      $i = 0;
+      do
+      {
+        $filename =  'r_'.$review->getManuscriptId().'_'.$review->getUserId().'_'.$i;
+        $files = sfFinder::type('file')->name($filename.'.*')->in(sfConfig::get('sf_upload_dir'));
+        $i++;
+      } while ($files);
+      $extension = $file->getExtension($file->getOriginalExtension());
+      $file->save(sfConfig::get('sf_upload_dir').'/'.$filename.$extension);
+    }
+    sfProjectConfiguration::getActive()->loadHelpers('Mail');
+    send_mail('Новая рецензия', sprintf("Поступила рецензия на статью %s авторов %s", $review->getmanuscript()
+      ->getTitle(), $this->getPartial('manuscript/authors', array('manuscript' => $review->getmanuscript()))), array(), sfConfig::get('app_mail_admin'), NULL, 'html'
+    );
+    $this->redirect(array(
+      'sf_route' => 'list_reviews',
+      'user_id' =>  $this->form->getValue('user_id')
+    ));
   }
 
   /**
@@ -94,53 +91,50 @@ class reviewerActions extends sfActions
    */
   public function executeSubmitFinal (sfWebRequest $request)
   {
-        $this->object = $this->getRoute()->getObject();
-        $data = $request->getPostParameter('review');
-        $files = $request->getFiles('review');
-        $this->form = new reviewForm($this->object);
-        $this->form->bind($data, $files);
-        if (!$this->form->isValid()) return;
-        $review = $this->form->updateObject();
-        if (!$review->equals($this->object)) return;
-        $review->getmanuscript()->setStatus(manuscriptPeer::AFTER_REVIEW);
-        $review->save();
-        if ($file = $this->form->getValue('file'))
-        {
-            $i = 0;
-            do
-            {
-               $filename =  'r_'.$review->getManuscriptId().'_'.$review->getUserId().'_'.$i;
-               $files = sfFinder::type('file')->name($filename.'.*')->in(sfConfig::get('sf_upload_dir'));
-               $i++;
-            } while ($files);
-            $extension = $file->getExtension($file->getOriginalExtension());
-            $file->save(sfConfig::get('sf_upload_dir').'/'.$filename.$extension);
-        }
-        $this->redirect(array(
-            'sf_route' => 'list_reviews',
-            'user_id' =>  $this->form->getValue('user_id')
-        ));
+    $this->object = $this->getRoute()->getObject();
+    $data = $request->getPostParameter('review');
+    $files = $request->getFiles('review');
+    $this->form = new reviewForm($this->object);
+    $this->form->bind($data, $files);
+    if (!$this->form->isValid()) return;
+    $review = $this->form->updateObject();
+    if (!$review->equals($this->object)) return;
+    $review->getmanuscript()->setStatus(manuscriptPeer::AFTER_REVIEW);
+    $review->save();
+    if ($file = $this->form->getValue('file'))
+    {
+      $i = 0;
+      do
+      {
+        $filename =  'r_'.$review->getManuscriptId().'_'.$review->getUserId().'_'.$i;
+        $files = sfFinder::type('file')->name($filename.'.*')->in(sfConfig::get('sf_upload_dir'));
+        $i++;
+      } while ($files);
+      $extension = $file->getExtension($file->getOriginalExtension());
+      $file->save(sfConfig::get('sf_upload_dir').'/'.$filename.$extension);
+    }
+    $this->redirect(array(
+      'sf_route' => 'list_reviews',
+      'user_id' =>  $this->form->getValue('user_id')
+    ));
   }
-  
+
   /**
    * Reviewer refuses to review a manuscript
    */
   public function executeReject(sfWebRequest $request)
   {
-  	$review = $this->getRoute()->getObject();
-  	$review->getmanuscript()->setStatus(manuscriptPeer::REVIEWER_REFUSED);
-  	$review->setOutcome(reviewPeer::REFUSED_REVIEW);
-  	$review->save();
-    if (sfConfig::get('app_mail_enabled'))
-    {
-        sfProjectConfiguration::getActive()->loadHelpers('Mail');
-        send_mail('Новая рецензия', sprintf("Рецензент %s отказался рецензировать статью %s авторов %s",
-          $review->getsfGuardUserProfile(),
-          $review->getmanuscript()->getTitle(),
-          $this->getPartial('manuscript/authors', array('manuscript' => $review->getmanuscript()))), array(), sfConfig::get('app_mail_admin'), NULL, 'html'
-        );
-    }
-  	$this->redirect('@user?user_id='.$review->getUserId());
+    $review = $this->getRoute()->getObject();
+    $review->getmanuscript()->setStatus(manuscriptPeer::REVIEWER_REFUSED);
+    $review->setOutcome(reviewPeer::REFUSED_REVIEW);
+    $review->save();
+    sfProjectConfiguration::getActive()->loadHelpers('Mail');
+    send_mail('Новая рецензия', sprintf("Рецензент %s отказался рецензировать статью %s авторов %s",
+      $review->getsfGuardUserProfile(),
+      $review->getmanuscript()->getTitle(),
+      $this->getPartial('manuscript/authors', array('manuscript' => $review->getmanuscript()))), array(), sfConfig::get('app_mail_admin'), NULL, 'html'
+    );
+    $this->redirect('@user?user_id='.$review->getUserId());
   }
 
   /**
@@ -153,9 +147,9 @@ class reviewerActions extends sfActions
     $this->form = reviewPeer::getForm($this->review);
   }
 
- /**
-  * File attached to review, if any
-  */
+  /**
+   * File attached to review, if any
+   */
   public function executeLinkFile(sfWebRequest $request)
   {
     $filepath = $this->getRoute()->getObject()->getFilename();
@@ -164,5 +158,5 @@ class reviewerActions extends sfActions
     show_file($filepath);
     return sfView::NONE;
   }
-   
+
 }
