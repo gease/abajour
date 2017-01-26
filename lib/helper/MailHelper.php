@@ -45,6 +45,15 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
     if ($to != sfConfig::get('app_mail_admin')) {
       $message->addBcc(sfConfig::get('app_mail_admin'));
     }
+    if ($format == 'html' || !empty($html_attachments)) {
+      $message->setFormat('text/html');
+    }
+    if ($format == 'html') {
+      $message->addPart(strip_tags($body));
+    }
+    foreach ($html_attachments as $name=>$contents) {
+      $message->attach(Swift_Attachment::newInstance($contents, $name . ".html", 'text/html')->setDisposition('inline'));
+    }
 		foreach ($attachments as $name=>$file)
 		{
 			$ext = substr($file, strrpos($file, '.'));
@@ -56,10 +65,6 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
 				if ($ext == 'docx') $mimeType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 			}
 			$message->attach(Swift_Attachment::fromPath($file), $mimeType);
-		}
-		foreach ($html_attachments as $name=>$contents)
-		{
-			$message->attach(Swift_Attachment::newInstance($contents, $name, 'text/html')->setDisposition('inline'));
 		}
 		// Send
     if (sfConfig::get('app_mail_enabled')) {
