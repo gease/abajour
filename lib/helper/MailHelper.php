@@ -10,7 +10,6 @@ require_once __DIR__ . '/../vendor/swift/swift_required.php';
  * @param unknown_type $cc
  * @param string|\unknown_type $format
  * @param array|\unknown_type $html_attachments
- * @internal param \unknown_type $from
  */
 function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $html_attachments = array())
 {
@@ -64,7 +63,10 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
 		}
 		// Send
     if (sfConfig::get('app_mail_enabled')) {
-      $mailer->send($message);
+      $mailer->send($message, $failures);
+      if (!empty($failures)) {
+        sfContext::getInstance()->getLogger()->warning(sprintf('mail was not delivered to the following recipients: %s', implode(',', $failures)));
+      }
     }
     else {
       sfContext::getInstance()->getLogger()->debug($message->toString());
