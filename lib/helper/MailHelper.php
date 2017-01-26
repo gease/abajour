@@ -46,7 +46,7 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
       $message->addBcc(sfConfig::get('app_mail_admin'));
     }
     if ($format == 'html' || !empty($html_attachments)) {
-      $message->setFormat('text/html');
+      $message->setContentType('text/html');
     }
     if ($format == 'html') {
       $message->addPart(strip_tags($body));
