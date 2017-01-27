@@ -3,13 +3,13 @@ require_once __DIR__ . '/../vendor/swift/swift_required.php';
 
 /**
  *
- * @param unknown_type $subject
- * @param unknown_type $body
- * @param unknown_type $attachments
- * @param unknown_type $to
- * @param unknown_type $cc
- * @param string|\unknown_type $format
- * @param array|\unknown_type $html_attachments
+ * @param string $subject
+ * @param string $body
+ * @param array $attachments
+ * @param string $to
+ * @param array | string $cc
+ * @param string $format
+ * @param array  $html_attachments
  */
 function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $html_attachments = array())
 {
@@ -56,31 +56,48 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
     }
 		foreach ($attachments as $name=>$file)
 		{
-			$ext = substr($file, strrpos($file, '.'));
-			$finfo = finfo_open( FILEINFO_MIME );
-			$mimeType = finfo_file( $finfo, $file );
-			finfo_close( $finfo );
-			if (in_array($mimeType, array('application/zip', 'application/x-zip', 'application/x-zip-compressed')))
-			{
-				if ($ext == 'docx') $mimeType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-			}
-			$message->attach(Swift_Attachment::fromPath($file), $mimeType);
+		  $ext = pathinfo($file, PATHINFO_EXTENSION);
+			$message->attach(Swift_Attachment::fromPath($file)->setFilename($name . '.' . $ext));
 		}
 		// Send
     if (sfConfig::get('app_mail_enabled')) {
       $mailer->send($message, $failures);
-      if (!empty($failures)) {
-        sfContext::getInstance()->getLogger()->warning(sprintf('mail was not delivered to the following recipients: %s', implode(',', $failures)));
+      if (sfConfig::get('sf_logging_enabled'))
+      {
+        sfContext::getInstance()->getEventDispatcher()->notify(new sfEvent('MailHelper', 'application.log', array(
+          sprintf('mail %s was sent to %s with cc to %s and bcc to %s',
+            $message->getSubject(),
+            implode(', ', array_keys($message->getTo())),
+            implode(', ', array_keys($message->getCc())),
+            implode(', ', array_keys($message->getBcc()))
+          )
+        )));
+        if (!empty($failures)) {
+          sfContext::getInstance()->getEventDispatcher()->notify(new sfEvent('MailHelper', 'application.log', array(
+            'message' => sprintf('mail was not delivered to the following recipients: %s', implode(',', $failures)),
+            'priority' => sfLogger::WARNING
+          )));
+        }
       }
     }
     else {
-      sfContext::getInstance()->getLogger()->debug($message->toString());
+      if (sfConfig::get('sf_logging_enabled')) {
+        sfContext::getInstance()->getEventDispatcher()->notify(new sfEvent('MailHelper', 'application.log', array(
+          'message' => $message->toString(),
+          'priority' => sfLogger::DEBUG
+        )));
+      }
     }
-
 	}
 	catch (Exception $e)
 	{
-		sfContext::getInstance()->getLogger()->err(sprintf('sending mail failed: %s', $e->getMessage()));
+	  if (sfConfig::get('sf_logging_enabled')) {
+	    sfContext::getInstance()->getEventDispatcher()->notify(new sfEvent('MailHelper', 'application.log', array(
+	      'message' => 'sending mail failed: %s', $e->getMessage(),
+        'priority' => sfLogger::ERR
+        )
+      ));
+    }
 		sfContext::getInstance()->getUser()->setFlash('error', 'Sending mail failed.');
 	}
 }
