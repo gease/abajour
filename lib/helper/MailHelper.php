@@ -25,6 +25,7 @@ function send_mail ($subject, $body, $attachments, $to, $cc, $format = 'text', $
     if (sfConfig::get('app_mail_encryption')) {
     	$smtp->setEncryption(sfConfig::get('app_mail_encryption'));
 		}
+		$smtp->setStreamOptions(array('ssl' => array('allow_self_signed' => true, 'verify_peer' => false, 'verify_peer_name' => false)));
 		$mailer = new Swift_Mailer($smtp);
     if (sfConfig::get('app_mail_to_admin')) {
       $to = sfConfig::get('app_mail_admin');
