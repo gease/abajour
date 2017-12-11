@@ -11,5 +11,5 @@
  */
 ?>
 
-<?php echo __('Managing editor of JSC')."<br>" ?>
-<?php echo __('Elena L. Taskaeva');?>
+<?php echo __('Editor-In-Chief')."<br>" ?>
+<?php echo __('Vladimir F. Fedin');?>
