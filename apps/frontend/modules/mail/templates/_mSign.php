@@ -12,4 +12,4 @@
 ?>
 
 <?php echo __('Editor-In-Chief')."<br>" ?>
-<?php echo __('Vladimir F. Fedin');?>
+<?php echo __('Vladimir P. Fedin');?>

@@ -770,6 +770,14 @@
         <source>Reply submitted successfully.</source>
         <target>Ответ успешно отправлен.</target>
       </trans-unit>
+      <trans-unit id="195">
+        <source>Editor-In-Chief</source>
+        <target>Главный редактор ЖСХ</target>
+      </trans-unit>
+      <trans-unit id="196">
+        <source>Vladimir P. Fedin</source>
+        <target>Владимир Петрович Федин</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
